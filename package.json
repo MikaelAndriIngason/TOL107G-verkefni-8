@@ -1,0 +1,22 @@
+{
+  "name": "vef1-2021-v8",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "dev": "browser-sync start --server --files main.js **/*.js styles.css index.html",
+    "copy": "cpy ./*.html ./build/",
+    "css-build": "cpy ./*.css ./build/",
+    "js-build": "cpy ./*.js ./build/",
+    "lib-build": "cpy ./lib/*.js ./build/lib/",
+    "build": "concurrently \"npm:css-build\" \"npm:copy\" \"npm:js-build\" \"npm:lib-build\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.27.5",
+    "concurrently": "^6.2.2",
+    "cpy-cli": "^1.0.1"
+  }
+}
